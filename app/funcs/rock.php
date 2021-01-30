@@ -46,7 +46,7 @@ function rock_array_sort(array $array, $key = null, $asc = true) {
 	else {
 		$GLOBALS["ROCK_ARRAY_SORT_KEY_" . nil] = $key;
 		uasort($array, 
-	    $asc ? function ($p1, $p2) use ($GLOBALS) {
+	    $asc ? function ($p1, $p2) {
 		$key = $GLOBALS["ROCK_ARRAY_SORT_KEY_" . nil];
 		$p1 = rock_array_get($p1, $key);
 		$p2 = rock_array_get($p2, $key);
@@ -59,7 +59,7 @@ function rock_array_sort(array $array, $key = null, $asc = true) {
 		}
 	    }
 	:
-	    function ($p1, $p2) use ($GLOBALS) {
+	    function ($p1, $p2)  {
 		$key = $GLOBALS["rock_ARRAY_SORT_KEY_" . nil];
 		$p1 = rock_array_get($p1, $key);
 		$p2 = rock_array_get($p2, $key);
